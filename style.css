@@ -24,7 +24,7 @@ body {
     overflow: visible; /* Pour éviter que le contenu soit masqué */
 }
 header {
-    border: 2px solid red; /* Ajoute une bordure pour voir s'il s'affiche */
+    border: 2px solid black; /* Ajoute une bordure pour voir s'il s'affiche */
     padding: 20px;
 }
 
