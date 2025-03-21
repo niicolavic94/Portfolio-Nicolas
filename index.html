@@ -98,7 +98,9 @@
     color: red;
     font-family: 'Bangers', cursive;
 }
-
+.social-icons a {
+    text-decoration: none;
+}
 
         .social-icons img {
             width: 48px;
@@ -130,9 +132,27 @@
             transition: transform 0.3s;
         }
 
-        .skill-icons i:hover {
-            transform: scale(1.1);
-        }
+        .skill-icons i {
+    opacity: 0;
+    transform: translateY(-50px); /* Départ plus haut */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.skill-icons i:nth-child(1) { transition-delay: 0.2s; }
+.skill-icons i:nth-child(2) { transition-delay: 0.4s; }
+.skill-icons i:nth-child(3) { transition-delay: 0.6s; }
+.skill-icons i:nth-child(4) { transition-delay: 0.8s; }
+.skill-icons i:nth-child(5) { transition-delay: 1s; }
+.skill-icons i:nth-child(6) { transition-delay: 1.2s; }
+
+.skill-icons i.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
 
         .skills {
             display: flex;
@@ -166,10 +186,14 @@
         }
 
         .project-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
+    width: 100%; /* Ajuste l'image à la largeur du conteneur */
+    max-width: 300px; /* Taille maximale */
+    height: auto; /* Conserve les proportions */
+    display: block; /* Évite les espaces blancs sous l'image */
+    margin: 0 auto; /* Centre l'image */
+    border-radius: 10px; /* Coins arrondis pour un meilleur rendu */
+}
+
 
         .project-card .content {
             padding: 20px;
@@ -235,11 +259,14 @@
         }
 
         footer {
+           
     background: rgba(255, 0, 0, 0.8); /* Rouge avec une opacité de 0.8 */
     text-align: center;
     padding: 10px;
 }
-
+footer a {
+text-decoration: none;
+} 
 
         @media (max-width: 768px) {
             .section#accueil {
@@ -324,15 +351,15 @@
         <h2>Projets</h2>
         <div class="project-carousel">
             <div class="project-card">
-                <img src="images/project1.jpg" alt="Chelsea">
+                <img src="images/chelsea.png" alt="Chelsea">
                 <div class="content">
                     <h3>Chelsea</h3>
-                    <p>Description du projet Chelsea.</p>
+                    <p>Projet Fil Rouge </p>
                     <a href="#" target="_blank">Voir le code</a>
                 </div>
             </div>
             <div class="project-card">
-                <img src="images/project2.jpg" alt="Pronos">
+                <img src="images/" alt="Pronos">
                 <div class="content">
                     <h3>Pronos</h3>
                     <p>Description du projet Pronos.</p>
@@ -373,5 +400,22 @@
             </a>
         </div>
     </footer>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const skillsSection = document.querySelector("#competences");
+    const skillIcons = document.querySelectorAll(".skill-icons i");
+
+    const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            skillIcons.forEach(icon => {
+                icon.classList.add("show");
+            });
+        }
+    }, { threshold: 0.5 });
+
+    observer.observe(skillsSection);
+});
+
+    </script>
 </body>
 </html>
