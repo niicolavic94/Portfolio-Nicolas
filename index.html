@@ -10,8 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
-
-
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -80,12 +78,11 @@
         }
 
         .text-content h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-}
-
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
 
         .text-content p {
             font-size: 18px;
@@ -94,18 +91,27 @@
         }
 
         .red {
-    font-size: 42px;
-    color: red;
-    font-family: 'Bangers', cursive;
-}
-.social-icons a {
-    text-decoration: none;
-}
+            font-size: 42px;
+            color: red;
+            font-family: 'Bangers', cursive;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+        }
 
         .social-icons img {
             width: 48px;
             height: 48px;
-            margin: 10px;
             transition: transform 0.3s;
         }
 
@@ -126,33 +132,29 @@
         }
 
         .skill-icons i {
-            font-size: 80px; /* Taille uniforme pour toutes les icônes */
+            font-size: 80px;
             margin: 5px;
             color: white;
             transition: transform 0.3s;
         }
 
         .skill-icons i {
-    opacity: 0;
-    transform: translateY(-50px); /* Départ plus haut */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
 
-.skill-icons i:nth-child(1) { transition-delay: 0.2s; }
-.skill-icons i:nth-child(2) { transition-delay: 0.4s; }
-.skill-icons i:nth-child(3) { transition-delay: 0.6s; }
-.skill-icons i:nth-child(4) { transition-delay: 0.8s; }
-.skill-icons i:nth-child(5) { transition-delay: 1s; }
-.skill-icons i:nth-child(6) { transition-delay: 1.2s; }
+        .skill-icons i:nth-child(1) { transition-delay: 0.2s; }
+        .skill-icons i:nth-child(2) { transition-delay: 0.4s; }
+        .skill-icons i:nth-child(3) { transition-delay: 0.6s; }
+        .skill-icons i:nth-child(4) { transition-delay: 0.8s; }
+        .skill-icons i:nth-child(5) { transition-delay: 1s; }
+        .skill-icons i:nth-child(6) { transition-delay: 1.2s; }
 
-.skill-icons i.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-
-
+        .skill-icons i.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .skills {
             display: flex;
@@ -186,14 +188,13 @@
         }
 
         .project-card img {
-    width: 100%; /* Ajuste l'image à la largeur du conteneur */
-    max-width: 300px; /* Taille maximale */
-    height: auto; /* Conserve les proportions */
-    display: block; /* Évite les espaces blancs sous l'image */
-    margin: 0 auto; /* Centre l'image */
-    border-radius: 10px; /* Coins arrondis pour un meilleur rendu */
-}
-
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
 
         .project-card .content {
             padding: 20px;
@@ -208,22 +209,19 @@
             margin-bottom: 20px;
         }
 
-
-
-.project-card .content a {
-    display: inline-block;
-    padding: 10px 20px;
-    background: black;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-    margin: 0 auto;
-}
-
+        .project-card .content a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin: 0 auto;
+        }
 
         .project-card .content a:hover {
-            background: rgba(255, 0, 0, 0.8); /* Rouge avec une opacité de 0.8 */
+            background: rgba(255, 0, 0, 0.8);
         }
 
         form {
@@ -231,7 +229,7 @@
             flex-direction: column;
             max-width: 400px;
             margin: auto;
-            background: rgba(255, 0, 0, 0.8); /* Rouge avec une opacité de 0.8 */
+            background: rgba(255, 0, 0, 0.8);
             padding: 20px;
             border-radius: 10px;
         }
@@ -259,14 +257,31 @@
         }
 
         footer {
-           
-    background: rgba(255, 0, 0, 0.8); /* Rouge avec une opacité de 0.8 */
-    text-align: center;
-    padding: 10px;
-}
-footer a {
-text-decoration: none;
-} 
+            background: rgba(255, 0, 0, 0.8);
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+
+        .download-btn {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            background-color: red;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: darkred;
+            transform: scale(1.05);
+        }
 
         @media (max-width: 768px) {
             .section#accueil {
@@ -327,8 +342,8 @@ text-decoration: none;
                     </a>
                 </div>
                 <p>Développeur Web passionné, je cherche une alternance pour renforcer mes compétences.</p>
-                <p>Après une reconversion réussie, j'ai découvert que la rigueur et la précision nécessaires dans le domaine de
-                      l'électricité se transposent parfaitement au développement web.</p>
+                <p>Après une reconversion réussie, j'ai découvert que la rigueur et la précision nécessaires dans le domaine de l'électricité se transposent parfaitement au développement web.</p>
+                <a href="documents/redon_nicolas.pdf" download="redon_nicolas" class="download-btn">Télécharger mon CV</a>
             </div>
         </div>
     </section>
@@ -400,22 +415,22 @@ text-decoration: none;
             </a>
         </div>
     </footer>
+
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const skillsSection = document.querySelector("#competences");
-    const skillIcons = document.querySelectorAll(".skill-icons i");
+        document.addEventListener("DOMContentLoaded", function () {
+            const skillsSection = document.querySelector("#competences");
+            const skillIcons = document.querySelectorAll(".skill-icons i");
 
-    const observer = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting) {
-            skillIcons.forEach(icon => {
-                icon.classList.add("show");
-            });
-        }
-    }, { threshold: 0.5 });
+            const observer = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting) {
+                    skillIcons.forEach(icon => {
+                        icon.classList.add("show");
+                    });
+                }
+            }, { threshold: 0.5 });
 
-    observer.observe(skillsSection);
-});
-
+            observer.observe(skillsSection);
+        });
     </script>
 </body>
 </html>
