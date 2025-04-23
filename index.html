@@ -6,13 +6,272 @@
     <title>Portfolio - Nicolas Redon</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
-    
+        .section {
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #121212;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Accueil */
+        #accueil {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .accueil-content h1 {
+            font-size: 3rem;
+            font-family: 'Bangers', cursive;
+            color: red;
+        }
+
+        .accueil-content h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Compétences */
+        #competences {
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .skill-icons i {
+            font-size: 3rem;
+            color: #333;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .skill-icons i.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Projects */
+        #projets {
+            background: #121212;
+            color: #fff;
+            padding: 40px 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #projets h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #ccc;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 20%;
+            text-align: right;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #007bff;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-content {
+            background: #2c2c2c;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2), -10px -10px 20px rgba(255, 255, 255, 0.1);
+            color: #fff;
+            width: 80%;
+            transition: transform 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-10px);
+        }
+
+        .timeline-content img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .timeline-content h3 {
+            margin: 10px 0;
+            color: #007bff;
+        }
+
+        .timeline-content p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .timeline-content a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 0;
+            padding-right: 20%;
+            text-align: left;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: auto;
+            right: 50%;
+            transform: translateX(50%);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #121212;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+        }
+
+        footer .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Contact Form */
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact input,
+        #contact textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #contact button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contact button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                padding-left: 0;
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .timeline-item::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline-item:nth-child(even)::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <ul>
@@ -28,16 +287,16 @@
     <section id="accueil" class="section">
         <div class="accueil-content">
             <div class="text-content">
-                <h1 class="red">NICOLAS REDON</h1>
+                <h1>NICOLAS REDON</h1>
                 <h2>Développeur Web</h2>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/nredon31/" target="_blank" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/nredon31/" target="_blank">
                         <img src="images/icons8-linkedin.svg" alt="LinkedIn">
                     </a>
-                    <a href="https://github.com/niicolavic94" target="_blank" aria-label="GitHub">
+                    <a href="https://github.com/niicolavic94" target="_blank">
                         <img src="images/icons8-github-logo.svg" alt="GitHub">
                     </a>
-                    <a href="mailto:nicoredon94@gmail.com" aria-label="Email">
+                    <a href="mailto:nicoredon94@gmail.com">
                         <img src="images/icons8-gmail.svg" alt="Email">
                     </a>
                 </div>
@@ -64,26 +323,26 @@
 
     <section id="projets" class="section">
         <h2>Projets</h2>
-        <div class="project-carousel">
-            <div class="project-card">
-                <img src="images/chelsea.png" alt="Chelsea">
-                <div class="content">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <img src="images/chelsea.png" alt="Chelsea">
                     <h3>Chelsea</h3>
-                    <p>Projet Fil Rouge </p>
+                    <p>Projet Fil Rouge</p>
                     <a href="#" target="_blank">Voir le code</a>
                 </div>
             </div>
-            <div class="project-card">
-                <img src="images/prono.PNG" alt="Pronos">
-                <div class="content">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <img src="images/prono.PNG" alt="Pronos">
                     <h3>Pronos</h3>
                     <p>Description du projet Pronos.</p>
-                    <a href="https://niicolavic94.github.io/Prono/" target="Prono">Voir le code</a>
+                    <a href="https://niicolavic94.github.io/Prono" target="_blank">Voir le code</a>
                 </div>
             </div>
-            <div class="project-card">
-                <img src="images/project3.jpg" alt="Site Vitrine">
-                <div class="content">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <img src="images/project3.jpg" alt="Site Vitrine">
                     <h3>Site Vitrine</h3>
                     <p>Description du projet Site Vitrine.</p>
                     <a href="#" target="_blank">Voir le code</a>
@@ -104,27 +363,30 @@
 
     <footer>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/nredon31/" target="_blank" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/nredon31/" target="_blank">
                 <img src="images/icons8-linkedin.svg" alt="LinkedIn">
             </a>
-            <a href="https://github.com/niicolavic94" target="_blank" aria-label="GitHub">
+            <a href="https://github.com/niicolavic94" target="_blank">
                 <img src="images/icons8-github-logo.svg" alt="GitHub">
             </a>
-            <a href="mailto:nicoredon94@gmail.com" aria-label="Email">
+            <a href="mailto:nicoredon94@gmail.com">
                 <img src="images/icons8-gmail.svg" alt="Email">
             </a>
         </div>
     </footer>
 
     <script>
+        // Animation apparition des icônes compétences
         document.addEventListener("DOMContentLoaded", function () {
             const skillsSection = document.querySelector("#competences");
             const skillIcons = document.querySelectorAll(".skill-icons i");
 
             const observer = new IntersectionObserver(entries => {
                 if (entries[0].isIntersecting) {
-                    skillIcons.forEach(icon => {
-                        icon.classList.add("show");
+                    skillIcons.forEach((icon, index) => {
+                        setTimeout(() => {
+                            icon.classList.add("show");
+                        }, index * 200); // Décalage pour l'effet de déroulement
                     });
                 }
             }, { threshold: 0.5 });
@@ -132,5 +394,6 @@
             observer.observe(skillsSection);
         });
     </script>
+
 </body>
 </html>
