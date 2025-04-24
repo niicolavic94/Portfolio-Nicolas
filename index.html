@@ -1,420 +1,719 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Nicolas Redon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Nicolas Redon</title>
+    <meta name="description" content="Portfolio de Nicolas Redon, développeur web passionné. Découvrez mes projets et mes compétences en HTML, CSS, JavaScript, PHP, MySQL et Bootstrap. Contactez-moi pour discuter de vos projets web.">
+    <meta name="keywords" content="portfolio, développeur web, HTML, CSS, JavaScript, PHP, MySQL, Bootstrap, projets web, contact">
+    <meta name="author" content="Nicolas Redon">
+    <link rel="canonical" href="https://niicolavic94.github.io/votre-repo-portfolio/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-color: black;
+        }
 
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: white;
-      background-color: black;
-    }
+        h1 {
+            font-family: 'Bangers', cursive;
+            font-size: 4rem;
+            text-align: center;
+        }
 
-    h1 {
-      font-family: 'Bangers', cursive;
-      font-size: 4rem;
-      text-align: center;
-    }
+        header {
+            background: black;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    header {
-      background: black;
-      padding: 20px;
-      text-align: center;
-    }
+        nav ul {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            list-style: none;
+        }
 
-    nav ul {
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
 
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
+        nav ul li a {
+            font-family: 'Bangers', cursive;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
 
-    nav ul li a {
-        font-family: 'Bangers', cursive;
-      text-decoration: none;
-      color: white;
-      font-size: 1.5rem;
-      transition: color 0.3s;
-    }
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: red;
+            border-bottom: 2px solid red;
+        }
 
-    nav ul li a:hover {
-      color: red;
-    }
+        .section {
+            padding: 50px 20px;
+            border-radius: 0;
+            margin: 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-    .section {
-      padding: 50px 20px;
-      border-radius: 15px;
-      margin: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
+        .section#accueil {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            background-image: url('images/high-angle-desktop-with-laptop-copy-space.jpg');
+            min-height: 100vh;
+        }
 
-    .section#accueil {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      text-align: center;
-      background-image: url('images/high-angle-desktop-with-laptop-copy-space.jpg');
-    }
+        .section#competences {
+            margin: 20px 0; /* Ajoute une marge entre les sections */
+            border: 2px solid #333; /* Ajoute une bordure */
+            border-radius: 10px; /* Arrondit les coins */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ajoute une ombre */
+            background-image: url('images/laptop-with-glowing-screen-table-dark-top-view-copy-space.jpg');
+            overflow: hidden;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
-    .accueil-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 20px;
-      margin-right: 20px;
-    }
+        .section#projets {
+            margin: 20px 0; /* Ajoute une marge entre les sections */
+            border: 2px solid #333; /* Ajoute une bordure */
+            border-radius: 10px; /* Arrondit les coins */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ajoute une ombre */
+            background-image: url('images/projets.jpg'); /* Remplacez par une nouvelle image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 0;
+            text-align: center; /* Center the main title */
+        }
 
-    .text-content h2 {
-      font-size: 24px;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      margin-bottom: 20px;
-    }
+        .section#contact {
+            margin: 20px 0; /* Ajoute une marge entre les sections */
+            border: 2px solid #333; /* Ajoute une bordure */
+            border-radius: 10px; /* Arrondit les coins */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ajoute une ombre */
+            background-image: url('images/top-view-desk-concept-with-coffee.jpg');
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
 
-    .text-content p {
-      font-size: 18px;
-      max-width: 500px;
-      color: white;
-    }
+        .accueil-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            margin-right: 20px;
+        }
 
-    .red {
-      font-size: 42px;
-      color: red;
-      font-family: 'Bangers', cursive;
-    }
+        .text-content h2 {
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
 
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 20px;
-      margin-top: 10px;
-    }
+        .text-content p {
+            font-size: 18px;
+            max-width: 500px;
+            color: white;
+        }
 
-    .social-icons img {
-      width: 48px;
-      height: 48px;
-      transition: transform 0.3s;
-    }
+        .red {
+            font-size: 42px;
+            color: red;
+            font-family: 'Bangers', cursive;
+        }
 
-    .social-icons img:hover {
-      transform: scale(1.1);
-    }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
 
-    .section#competences {
-      background-image: url('images/laptop-with-glowing-screen-table-dark-top-view-copy-space.jpg');
-      overflow: hidden;
-    }
+        .social-icons img {
+            width: 48px;
+            height: 48px;
+            transition: transform 0.3s;
+        }
 
-    .section#projets {
-      background-image: url('images/glasses-lie-laptop-reflecting-light-from-screen-dark.jpg');
-      padding-bottom: 30px; /* Réduction du padding bas */
-    }
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
 
-    .section#contact {
-      background-image: url('images/top-view-desk-concept-with-coffee.jpg');
-    }
+        .skill-icons {
+            display: flex;
+            gap: 30px;
+            animation: scroll 20s linear infinite;
+            white-space: nowrap;
+            padding: 20px 0;
+        }
 
-    .skill-icons {
-      display: flex;
-      gap: 20px;
-      animation: scroll 20s linear infinite;
-      white-space: nowrap;
-    }
+        .skill-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .skill-icons i {
-      font-size: 80px;
-      color: white;
-      transition: transform 0.3s;
-    }
+        .skill-icon i {
+            font-size: 70px;
+            color: white;
+            transition: transform 0.3s;
+            margin-bottom: 5px;
+        }
 
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
+        .skill-icon span {
+            font-size: 0.9em;
+            color: #ccc;
+        }
 
-    .skills {
-      display: flex;
-      justify-content: space-around;
-      text-align: center;
-      overflow: hidden;
-      position: relative;
-    }
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
 
-    .project-card img,
-    .timeline-content img {
-      max-width: 200px; /* Réduction de la largeur maximale des images */
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
-      border: 2px solid RED;
-      margin: 0 auto 10px;
-      display: block;
-    }
+        .skills {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            width: 80%;
+            margin: 20px auto 0;
+        }
 
-    /* TIMELINE STYLING */
-    .timeline {
-      position: relative;
-      margin: 30px auto; /* Réduction de la marge verticale */
-      padding-left: 30px; /* Réduction du padding gauche */
-      max-width: 500px; /* Réduction de la largeur maximale */
-      border-left: 4px solid red;
-    }
+        .timeline {
+            position: relative;
+            margin: 30px auto;
+            padding-left: 30px;
+            max-width: 900px;
+            border-left: 4px solid #e74c3c;
+            display: flex; /* Enable flexbox for project centering */
+            flex-direction: column; /* Stack project items */
+            align-items: center; /* Center project items horizontally */
+        }
 
-    .timeline-item {
-      position: relative;
-      margin-bottom: 30px; /* Réduction de la marge basse */
-    }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            width: 80%; /* Adjust width of each project item */
+            max-width: 600px; /* Limit maximum width */
+        }
 
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -9px; /* Ajustement de la position du point */
-      top: 0;
-      width: 16px; /* Réduction de la taille du point */
-      height: 16px; /* Réduction de la taille du point */
-    
-      border-radius: 50%;
-      border: 2px solid white;
-    }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #e74c3c;
+            border: 2px solid black;
+        }
 
-    .timeline-content {
-    text-align: center;
-      background-color: black;
-      border: 1px solid red;
-      padding: 15px; /* Réduction du padding */
-      border-radius: 10px;
-      backdrop-filter: blur(5px);
-    }
+        .timeline-content {
+            text-align: center; /* Center text within each project */
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid #e74c3c;
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .timeline-content h3 {
-      margin-top: 0;
-      font-size: 20px; /* Réduction de la taille du titre */
-    }
+        .timeline-content img {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid RED;
+            margin-bottom: 10px;
+        }
 
-    .timeline-content p {
-      font-size: 14px; /* Réduction de la taille du paragraphe */
-    }
+        .timeline-content h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
 
-    .timeline-content a {
-      display: inline-block;
-      padding: 6px 12px; /* Réduction du padding du lien */
-      margin-top: 8px; /* Réduction de la marge haute du lien */
-      background: red;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s;
-      font-size: 14px; /* Réduction de la taille du texte du lien */
-    }
+        .timeline-content p {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
 
-    .timeline-content a:hover {
-      background: red;
-    }
+        .timeline-content a {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-top: 10px;
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-size: 0.9rem;
+        }
 
-    form {
-      max-width: 800px;
-      width: 90%;
-      margin: auto;
-      background: rgba(255, 0, 0, 0.9);
-      padding: 40px;
-      border-radius: 15px;
-      font-size: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-between;
-    }
+        .timeline-content a:hover {
+            background: #c0392b;
+        }
 
-    form input,
-    form textarea {
-      font-size: 16px;
-      padding: 15px;
-      border-radius: 5px;
-      border: none;
-      width: 48%;
-      box-sizing: border-box;
-    }
+        form#contact-form {
+            max-width: 800px;
+            width: 90%;
+            margin: 30px auto;
+            background: rgba(255, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
 
-    form textarea {
-      width: 100%;
-      height: 150px;
-      resize: vertical;
-    }
+        form#contact-form > div {
+            display: flex;
+            flex-direction: column;
+        }
 
-    form button {
-      background: black;
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin: auto;
-      display: block;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
+        form#contact-form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: white;
+        }
 
-    form button:hover {
-      background: white;
-      color: black;
-    }
+        form#contact-form input,
+        form#contact-form textarea {
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: white;
+            color: black;
+        }
 
-    @media (max-width: 768px) {
-      .section#accueil {
-        justify-content: center;
-        text-align: center;
-      }
+        form#contact-form input:focus,
+        form#contact-form textarea:focus {
+            outline: 1px solid white;
+            background-color: #f0f0f0;
+        }
 
-      .accueil-content {
-        align-items: center;
-        margin-right: 0;
-      }
+        form#contact-form textarea#message {
+            height: 150px;
+            resize: vertical;
+        }
 
-      .skills {
-        flex-direction: column;
-      }
+        form#contact-form button {
+            background: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
 
-      form input,
-      form textarea {
-        width: 100%;
-      }
-    }
+        form#contact-form button:hover {
+            background: white;
+            color: black;
+        }
 
-    footer {
-      background: rgba(255, 0, 0, 0.8);
-      text-align: center;
-      padding: 10px;
-    }
+        form#contact-form .error-message {
+            color: yellow;
+            font-size: 0.8em;
+            margin-top: 3px;
+        }
 
-    .download-btn {
-      color: white;
-      font-size: 16px;
-      text-decoration: none;
-      margin-top: 20px;
-      display: inline-block;
-      background-color: red;
-      padding: 8px 16px;
-      border-radius: 5px;
-      transition: background 0.3s, transform 0.3s;
-    }
+        form#contact-form #form-status {
+            margin-top: 10px;
+            font-weight: bold;
+        }
 
-    .download-btn:hover {
-      background-color: darkred;
-      transform: scale(1.05);
-    }
-  </style>
+        form#contact-form #form-status.success {
+            color: green;
+        }
+
+        form#contact-form #form-status.error {
+            color: red;
+        }
+
+        @media (min-width: 768px) {
+            form#contact-form {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            form#contact-form > div:last-child {
+                grid-column: 1 / -1;
+            }
+
+            form#contact-form button {
+                grid-column: 1 / -1;
+                margin: 15px auto 0;
+                max-width: 200px;
+            }
+
+            .timeline-content {
+                text-align: center; /* Keep text centered on larger screens too */
+                padding: 20px;
+            }
+
+            .timeline-item::before {
+                top: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section#accueil {
+                justify-content: center;
+                text-align: center;
+                min-height: auto;
+            }
+
+            .accueil-content {
+                align-items: center;
+                margin-right: 0;
+            }
+
+            .skills {
+                flex-direction: column;
+                align-items: center;
+                width: 95%;
+            }
+
+            .skill-icons {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 10px 0;
+                gap: 15px;
+            }
+
+            .skill-icon {
+                margin: 5px;
+            }
+
+            .skill-icon i {
+                font-size: 50px;
+            }
+
+            form input,
+            form textarea {
+                width: 100%;
+            }
+
+            .timeline {
+                padding-left: 20px;
+                align-items: center; /* Center project items on smaller screens */
+            }
+
+            .timeline-item {
+                width: 95%; /* Adjust width for smaller screens */
+            }
+
+            .timeline-item::before {
+                left: -9px;
+                top: 8px;
+            }
+
+            .timeline-content {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .timeline-content h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        footer {
+            background: rgba(255, 0, 0, 0.8);
+            text-align: center;
+            padding: 10px;
+        }
+
+        .download-btn {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            background-color: red;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: darkred;
+            transform: scale(1.05);
+        }
+
+        .error-message {
+            color: yellow;
+            font-size: 0.8em;
+            margin-top: 3px;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <nav class="navbar">
-    <ul>
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="#competences" class="nav-link">Compétences</a></li>
+                <li><a href="#projets" class="nav-link active">Projets</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section id="accueil" class="section">
-  <div class="accueil-content">
-    <div class="text-content">
-      <h1>NICOLAS REDON</h1>
-      <h2>Développeur Web</h2>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/nredon31/" target="_blank"><img src="images/icons8-linkedin.svg" alt="LinkedIn"></a>
-        <a href="https://github.com/niicolavic94" target="_blank"><img src="images/icons8-github-logo.svg" alt="GitHub"></a>
-        <a href="mailto:nicoredon94@gmail.com"><img src="images/icons8-gmail.svg" alt="Email"></a>
-      </div>
-      <p>Développeur Web passionné, je cherche une alternance pour renforcer mes compétences.</p>
-      <p>Après une reconversion réussie, j'ai découvert que la rigueur et la précision nécessaires dans le domaine de l'électricité se transposent parfaitement au développement web.</p>
-      <a href="documents/redon_nicolas.pdf" download="redon_nicolas" class="download-btn">Télécharger mon CV</a>
-    </div>
-  </div>
-</section>
+    <section id="accueil" class="section">
+        <div class="accueil-content">
+            <div class="text-content">
+                <h1>NICOLAS REDON</h1>
+                <h2>Développeur Web</h2>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/nredon31/" target="_blank" aria-label="LinkedIn"><img src="images/icons8-linkedin.svg" alt="LinkedIn"></a>
+                    <a href="https://github.com/niicolavic94" target="_blank" aria-label="GitHub"><img src="images/icons8-github-logo.svg" alt="GitHub"></a>
+                    <a href="mailto:nicoredon94@gmail.com" aria-label="Email"><img src="images/icons8-gmail.svg" alt="Email"></a>
+                </div>
+                <p>Développeur Web passionné, je cherche une alternance pour renforcer mes compétences.</p>
+                <p>Après une reconversion réussie, j'ai découvert que la rigueur et la précision nécessaires dans le domaine de l'électricité se transposent parfaitement au développement web.</p>
+                <a href="documents/redon_nicolas.pdf" download="redon_nicolas" class="download-btn">Télécharger mon CV</a>
+            </div>
+        </div>
+    </section>
 
-<section id="competences" class="section">
-  <h1>Compétences</h1>
-  <div class="skills">
-    <div class="skill-icons">
-      <i class="devicon-html5-plain-wordmark colored" title="HTML5"></i>
-      <i class="devicon-css3-plain-wordmark colored" title="CSS3"></i>
-      <i class="devicon-bootstrap-plain-wordmark colored" title="Bootstrap"></i>
-      <i class="devicon-javascript-plain colored" title="JavaScript"></i>
-      <i class="devicon-mysql-plain-wordmark colored" title="MySQL"></i>
-      <i class="devicon-php-plain colored" title="PHP"></i>
-    </div>
-  </div>
-</section>
+    <section id="competences" class="section">
+        <h1>Compétences</h1>
+        <div class="skills">
+            <div class="skill-icons" aria-label="Compétences en développement web">
+                <div class="skill-icon">
+                    <i class="devicon-html5-plain-wordmark colored" title="HTML5"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-icon">
+                    <i class="devicon-css3-plain-wordmark colored" title="CSS3"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-icon">
+                    <i class="devicon-bootstrap-plain-wordmark colored" title="Bootstrap"></i>
+                    <span>Bootstrap</span>
+                </div>
+                <div class="skill-icon">
+                    <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-icon">
+                    <i class="devicon-mysql-plain-wordmark colored" title="MySQL"></i>
+                    <span>MySQL</span>
+                </div>
+                <div class="skill-icon">
+                    <i class="devicon-php-plain colored" title="PHP"></i>
+                    <span>PHP</span>
+                </div>
+                <div class="skill-icon">
+                    <i class="devicon-git-plain-wordmark colored" title="Git"></i>
+                    <span>Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="projets" class="section">
-  <h1>Projets</h1>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <img src="images/chelsea.png" alt="Chelsea">
-        <h3>Chelsea</h3>
-        <p>Projet Fil Rouge</p>
-        <a href="#">Voir le code</a>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <img src="images/prono.PNG" alt="Pronos">
-        <h3>Pronos</h3>
-        <p>Description du projet Pronos.</p>
-        <a href="https://niicolavic94.github.io/Prono" target="_blank">Voir le code</a>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <img src="images/project3.jpg" alt="Site Vitrine" style="max-width: 150px;">
-        <h3>Site Vitrine</h3>
-        <p style="font-size: 12px; margin-bottom: 5px;">Description du projet Site Vitrine.</p>
-        <a href="#" style="padding: 5px 10px; font-size: 12px; margin-top: 5px;">Voir le code</a>
-      </div>
-    </div>
-  </div>
-</section>
+    <section id="projets" class="section">
+        <h1>Projets</h1>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                   
+                    <h3>Chelsea</h3>
+                    <p>Projet Fil Rouge réalisé durant formation. Application web interactive sur le  club de football de Chelsea.</p>
+                    <a href="#" target="_blank">Voir le code</a>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                
+                    <h3>Pronos</h3>
+                    <p>Petit projet  de pronostics sportifs avec Firebase. Utilisation de HTML, CSS et JavaScript pour l'interface utilisateur.</p>
+                    <a href="https://niicolavic94.github.io/Prono" target="_blank">Voir le code</a>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+               
+                    <h3>Site Vitrine</h3>
+                    <p >Réalisation d'une mise à jour d'un site de rénovation de véhicules</p>
+                    <a href="#" target="_blank"">Voir le code</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact" class="section">
-  <h1>Contact</h1>
-  <form>
-    <input type="text" placeholder="Nom" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Message" required></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
+    <section id="contact" class="section">
+        <h1>Contact</h1>
+        <form id="contact-form" action="#" method="POST" aria-label="Formulaire de contact">
+            <div>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" required aria-required="true">
+                <div class="error-message" id="nom-error"></div>
+            </div>
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required aria-required="true">
+                <div class="error-message" id="email-error"></div>
+            </div>
+            <div style="grid-column: 1 / -1;">
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" placeholder="Votre message" required aria-required="true"></textarea>
+                <div class="error-message" id="message-error"></div>
+            </div>
+            <button type="submit">Envoyer</button>
+            <div id="form-status" aria-live="polite"></div>
+        </form>
+    </section>
 
-<footer>
-  <div class="social-icons">
-    <a href="https://www.linkedin.com/in/nredon31/" target="_blank"><img src="images/icons8-linkedin.svg" alt="LinkedIn"></a>
-    <a href="https://github.com/niicolavic94" target="_blank"><img src="images/icons8-github-logo.svg" alt="GitHub"></a>
-    <a href="mailto:nicoredon94@gmail.com"><img src="images/icons8-gmail.svg" alt="Email"></a>
-  </div>
-</footer>
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/nredon31/" target="_blank" aria-label="LinkedIn"><img src="images/icons8-linkedin.svg" alt="LinkedIn"></a>
+            <a href="https://github.com/niicolavic94" target="_blank" aria-label="GitHub"><img src="images/icons8-github-logo.svg" alt="GitHub"></a>
+            <a href="mailto:nicoredon94@gmail.com" aria-label="Email"><img src="images/icons8-gmail.svg" alt="Email"></a>
+        </div>
+        <p>&copy; 2025 Nicolas Redon. Tous droits réservés.</p>
+    </footer>
 
+    <script>
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            const nameInput = document.getElementById('nom');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            const nameError = document.getElementById('nom-error');
+            const emailError = document.getElementById('email-error');
+            const messageError = document.getElementById('message-error');
+            const formStatus = document.getElementById('form-status');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                let isValid = true;
+
+                // Validation du nom
+                if (nameInput.value.trim() === '') {
+                    nameError.textContent = 'Veuillez entrer votre nom.';
+                    isValid = false;
+                } else {
+                    nameError.textContent = '';
+                }
+
+                // Validation de l'email avec regex
+                if (emailInput.value.trim() === '') {
+                    emailError.textContent = 'Veuillez entrer votre email.';
+                    isValid = false;
+                } else if (!emailRegex.test(emailInput.value)) {
+                    emailError.textContent = 'Veuillez entrer un email valide (format: nom@domaine.com).';
+                    isValid = false;
+                } else {
+                    emailError.textContent = '';
+                }
+
+                // Validation du message
+                if (messageInput.value.trim() === '') {
+                    messageError.textContent = 'Veuillez entrer votre message.';
+                    isValid = false;
+                } else {
+                    messageError.textContent = '';
+                }
+
+                if (isValid) {
+                    // Ici, tu peux ajouter le code pour envoyer les données du formulaire
+                    // via une requête AJAX à un script de traitement (PHP, Node.js, etc.)
+                    console.log('Formulaire valide, envoi des données...');
+                    formStatus.textContent = 'Envoi en cours...';
+                    formStatus.classList.remove('error');
+
+                    // Simulation d'un envoi réussi après 1 seconde
+                    setTimeout(() => {
+                        form.reset();
+                        formStatus.textContent = 'Message envoyé avec succès !';
+                        formStatus.classList.add('success');
+                    }, 1000);
+                } else {
+                    formStatus.textContent = 'Veuillez corriger les erreurs du formulaire.';
+                    formStatus.classList.add('error');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
